@@ -1,0 +1,61 @@
+---
+title: "Nachiket Nareshkumar Pasrija (000918216)"
+subtitle: "Predictive Data Analytics (DATA-420-A)"
+output:
+  html_document:
+    df_print: paged
+---
+<style>
+body {
+text-align: justify}
+</style>
+
+### __Assignement 6__
+
+```{r,message=FALSE}
+library(tidyverse)
+library(forecast)
+library(tidyr)
+```
+<br>
+
+#### __1. Load the dataset into a data frame__
+```{r,message=FALSE}
+data <- read.csv("~/retail_data.csv", header = TRUE)
+```
+<br>
+
+#### __2. Create a decomposition plot.__
+```{r,message=FALSE}
+# Convert the data to a time series object
+time_sereies_data <- ts(data$Sales, start = c(2018, 1), end = c(2023, 12), frequency = 12)
+
+# Decompose the time series and create a plot
+decomposed <- decompose(time_sereies_data)
+plot(decomposed)
+```  
+
+R uses the default additive time series model to decompose the data. When we decompose a time series, we break it down into original time series and other three main components: trend, seasonal, and remainder (or random/error).
+
+<br>
+
+#### __3. Train the model using ARIMA dataset.__
+```{r,message=FALSE}
+ARIMA <- auto.arima(time_sereies_data)
+summary(ARIMA)
+```
+
+<br>
+
+#### __4. Forecast the sales for the next 4, 8, and 12 months.__
+```{r,message=FALSE}
+forecast_4_months <- forecast(ARIMA, h = 4)
+print(forecast_4_months)
+
+forecast_8_months <- forecast(ARIMA, h = 8)
+print(forecast_8_months)
+
+forecast_12_months <- forecast(ARIMA, h = 12)
+print(forecast_12_months)
+```
+
