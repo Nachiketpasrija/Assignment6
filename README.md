@@ -4,7 +4,7 @@
 
 ![image](https://github.com/Nachiketpasrija/Assignment6/assets/148599951/32723f0e-0c5e-4ecc-b0dd-b8c9c72a8663)
 
-R uses the default additive time series model to decompose the data. When we decompose a time series, we break it down into original time series and other three main components: trend, seasonal, and remainder (or random/error).
+In R, the standard practice for time series decomposition involves applying an additive model. This technique entails the partitioning of a time series into its original form and three fundamental components: the trend, the seasonal pattern, and remainder (or random/error).
 
 ### ARIMA Model
 
