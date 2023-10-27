@@ -10,7 +10,7 @@ R uses the default additive time series model to decompose the data. When we dec
 
 ![image](https://github.com/Nachiketpasrija/Assignment6/assets/148599951/7b4b395c-eee6-4655-98de-6c5ad26433e9)
 
-#### Forecasted sales for the next 4, 8, and 12 months
+### Forecasted sales for the next 4, 8, and 12 months
 
 #### 4 Months
 
